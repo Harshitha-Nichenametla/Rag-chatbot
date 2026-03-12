@@ -1,0 +1,10 @@
+from calculator import add, subtract
+from greet import say_hello
+
+print(say_hello("Greshma"))
+
+a = 10
+b = 5
+
+print("Addition:", add(a, b))
+print("Subtraction:", subtract(a, b))
