@@ -1,0 +1,41 @@
+"""
+Utility functions for chatbot responses
+"""
+
+import random
+
+def greet_user(name):
+    greetings = [
+        f"Hello {name}! 👋",
+        f"Hi {name}, how can I help you today?",
+        f"Welcome {name}! Ask me anything."
+    ]
+    return random.choice(greetings)
+
+
+def fallback_response():
+    responses = [
+        "I'm not sure about that. Could you ask differently?",
+        "Sorry, I don't have the answer for that.",
+        "Let me think about that and get back to you."
+    ]
+    return random.choice(responses)
+
+
+def format_answer(answer, sources=None):
+    """
+    Formats chatbot response with optional sources
+    """
+    if not sources:
+        return answer
+    
+    source_text = "\nSources:\n"
+    for s in sources:
+        source_text += f"- {s}\n"
+    
+    return answer + source_text
+
+
+if __name__ == "__main__":
+    print(greet_user("Greshma"))
+    print(fallback_response())
