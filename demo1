@@ -16,7 +16,7 @@ def greet_user(name):
 def fallback_response():
     responses = [
        # "I'm not sure about that. Could you ask differently?",
-        "Sorry, I don't have the answer for that.",
+       # "Sorry, I don't have the answer for that.",
         "Let me think about that and get back to you."
     ]
     return random.choice(responses)
