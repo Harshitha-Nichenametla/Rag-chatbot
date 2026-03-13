@@ -515,6 +515,7 @@ async function sendMessage() {
     removeLoader();
 
     const answer  = data.answer || "⚠️ No solution returned.";
+
     const sources = data.sources || [];
     addMessage(answer, "bot", sources);
     chatHistory.push({ role: "bot", content: answer, sources });
