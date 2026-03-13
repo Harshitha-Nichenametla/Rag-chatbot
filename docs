@@ -1,0 +1,48 @@
+def calculator():
+    print("Simple Calculator")
+    print("-" * 20)
+
+    while True:
+        print("\nOperations: +  -  *  /")
+        print("Type 'quit' to exit\n")
+
+        try:
+            num1 = input("Enter first number: ")
+            if num1.lower() == 'quit':
+                break
+
+            op = input("Enter operator (+, -, *, /): ")
+
+            num2 = input("Enter second number: ")
+            if num2.lower() == 'quit':
+                break
+
+            num1, num2 = float(num1), float(num2)
+
+            if op == '+':
+                result = num1 + num2
+            elif op == '-':
+                result = num1 - num2
+            elif op == '*':
+                result = num1 * num2
+            elif op == '/':
+                if num2 == 0:
+                    print("Error: Cannot divide by zero!")
+                    continue
+                result = num1 / num2
+            else:
+                print("Invalid operator!")
+                continue
+
+            # Clean up result display
+            if result == int(result):
+                print(f"\nResult: {num1} {op} {num2} = {int(result)}")
+            else:
+                print(f"\nResult: {num1} {op} {num2} = {result:.4f}")
+
+        except ValueError:
+            print("Error: Please enter valid numbers!")
+
+    print("Goodbye!")
+
+calculator()
